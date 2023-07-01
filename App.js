@@ -6,18 +6,13 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
-  Modal,
-  TextInput
 } from "react-native";
 import Header from "./components/Header";
 import Task from "./components/Task";
 import AddTask from "./components/AddTask";
 
-
 export default function App() {
   const [task, setTask] = useState([])
-
-
 
   const addTask = (text) => {
     if (!text) {
@@ -45,8 +40,9 @@ export default function App() {
       return task;
     });
 
-    setTask(updatedTasks); 
+    setTask(updatedTasks);
   };
+
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -56,9 +52,14 @@ export default function App() {
           <AddTask addTask={addTask} />
           <View style={styles.list} >
             <FlatList data={task} renderItem={({ item }) => (
-              <Task item={item} deleteTask={deleteTask} modifyTask={modifyTask} />
+              <Task item={item}
+                deleteTask={deleteTask}
+                modifyTask={modifyTask}
+             />
             )}
+
             />
+           
           </View>
         </View>
       </SafeAreaView >
