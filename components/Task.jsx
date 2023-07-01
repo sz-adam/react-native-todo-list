@@ -14,7 +14,9 @@ const TaskItem = ({ item, deleteTask, modifyTask}) => {
   };
 
   return (
+   
     <TouchableOpacity style={styles.item}>
+      
       <Text style={styles.task}>{item.task}</Text>
       <View style={styles.icons}>
         <AntDesign
@@ -40,11 +42,12 @@ const TaskItem = ({ item, deleteTask, modifyTask}) => {
         setModifiedTask={setModifiedTask}
         handleSave={handleSave}
       />
-
     </TouchableOpacity>
+ 
   );
 };
 const styles = StyleSheet.create({
- 
+
+
 })
 export default TaskItem;

@@ -22,7 +22,6 @@ export default function App() {
         return [{ task: text, id: Math.floor(Math.random() * 100) + 1 }, ...prevTasks]
       })
     }
-
   }
 
   const deleteTask = id => {
@@ -51,15 +50,13 @@ export default function App() {
         <View style={styles.content}>
           <AddTask addTask={addTask} />
           <View style={styles.list} >
-            <FlatList data={task} renderItem={({ item }) => (
+            <FlatList  data={task} numColumns={2} renderItem={({ item }) => (
               <Task item={item}
                 deleteTask={deleteTask}
-                modifyTask={modifyTask}
+                modifyTask={modifyTask}               
              />
             )}
-
-            />
-           
+            />           
           </View>
         </View>
       </SafeAreaView >
@@ -76,9 +73,15 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 30,
-    flex: 1
+    flex: 1,
+  
+    
   },
   list: {
+    flexDirection:'row',
     marginTop: 30
+  },
+  task:{
+    flexDirection:'row',
   }
 })
