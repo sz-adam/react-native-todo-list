@@ -48,10 +48,11 @@ const TaskItem = ({ item, deleteTask, modifyTask }) => {
         activeOpacity={0.6}
         onPress={() => handleTaskColorPress(colors)}
       >
-        <Text style={styles.task}>{item.task}</Text>
-        {colorName && (
+           {colorName && (
           <Text style={styles.colorName}>{colorName}</Text>
         )}
+        <Text style={styles.task}>{item.task}</Text>
+     
         <View style={styles.iconContainer}>
           <AntDesign
             name="delete"
@@ -90,8 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     margin: 10,
-    marginVertical: 8,
-    flexDirection: 'row',
+    marginVertical: 8,  
     alignItems: 'center',
     flexDirection: 'column',
     elevation: 2,
@@ -103,21 +103,23 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  task: {
+  colorName: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    alignItems:'center',   
+    padding:10,
+  
+  },
+  task: { 
     fontSize: 16,
     fontWeight: 'bold',
     color: '#fff',
     marginRight: 10,
-    padding: 15,
-    position: 'relative',
+    padding: 10,
+   
   },
-  colorName: {
-    fontSize: 12,
-    color: '#fff',
-    position: 'absolute',
-    top: 10,
-    left: 10,
-  },
+ 
   iconContainer: {
     position: 'absolute',
     bottom: 5,

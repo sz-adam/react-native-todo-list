@@ -21,7 +21,7 @@ export default function App() {
       Alert.alert('Please add Task')
     } else {
       setTask(prevTasks => {
-        return [{ task: text, id: Math.floor(Math.random() * 100) + 1 }, ...prevTasks]
+        return [{ task: text, id: Math.floor(Math.random() * 10000) + 1 }, ...prevTasks]
       })
     }
   }
@@ -77,17 +77,10 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 30,
-    flex: 1,
-  
-    
+    flex: 1,    
   },
-  list: {
-  
-    flexDirection:'row',
+  list: {  
     marginTop: 70,
-    
-   
-   
   },
 
 })
