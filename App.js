@@ -10,6 +10,8 @@ import {
 import Header from "./components/Header";
 import Task from "./components/Task";
 import AddTask from "./components/AddTask";
+import {ColorProvider} from "./context/ColorContext";
+
 
 export default function App() {
   const [task, setTask] = useState([])
@@ -44,12 +46,12 @@ export default function App() {
 
 
   return (
+    <ColorProvider>
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.container}>
         <Header />
         <View style={styles.content}>
-          <AddTask addTask={addTask} />
-          
+          <AddTask addTask={addTask} />         
           <View style={styles.list} >
             <FlatList  data={task} horizontal  showsHorizontalScrollIndicator={false} renderItem={({ item }) => (
               <Task item={item}
@@ -62,6 +64,7 @@ export default function App() {
         </View>
       </SafeAreaView >
     </TouchableWithoutFeedback>
+    </ColorProvider>
   )
 
 }
