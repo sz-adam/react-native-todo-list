@@ -49,8 +49,9 @@ export default function App() {
         <Header />
         <View style={styles.content}>
           <AddTask addTask={addTask} />
+          
           <View style={styles.list} >
-            <FlatList  data={task} numColumns={2} renderItem={({ item }) => (
+            <FlatList  data={task} horizontal  showsHorizontalScrollIndicator={false} renderItem={({ item }) => (
               <Task item={item}
                 deleteTask={deleteTask}
                 modifyTask={modifyTask}               
@@ -78,10 +79,12 @@ const styles = StyleSheet.create({
     
   },
   list: {
+  
     flexDirection:'row',
-    marginTop: 30
+    marginTop: 70,
+    
+   
+   
   },
-  task:{
-    flexDirection:'row',
-  }
+
 })
